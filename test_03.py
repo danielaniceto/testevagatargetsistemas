@@ -9,17 +9,14 @@ feriados. Estes dias devem ser ignorados no cálculo da média;"""
 
 import json
 
-json_dates = """
-{
-"faturamento_diario": [0, 220, 300, 0, 150, 500, 0, 0, 800, 100, 50, 400, 0, 700, 200, 300, 0, 0, 600, 900, 0, 0, 50, 100, 0, 0, 750, 200, 0, 400]
-}
-"""
+json_file_path = "C:/Users/Daniel/Desktop/PASTAS/testevagatargetsistemas/dados_faturamentos.json"
 
-json_date = json.loads(json_dates)
+with open(json_file_path, 'r', encoding="utf-8") as json_file:
+    json_dates = json.load(json_file)
 
-invoicing = json_date['faturamento_diario']
+invoicing = json_dates
 
-billing_invoicing = [value for value in invoicing if value > 0]
+billing_invoicing = [day['valor'] for day in invoicing if day['valor'] > 0]
 
 minor_invoice = min(billing_invoicing)
 major_invoice = max(billing_invoicing)
@@ -28,6 +25,6 @@ monthly_average = sum(billing_invoicing) / len(billing_invoicing)
 
 days_above_average = sum(1 for value in billing_invoicing if value > monthly_average)
 
-print(f'O menor valor de faturamento ocorrido em um dia do mês foi de R${minor_invoice}.') #output: 50
-print(f'O maior valor de faturamento ocorrido em um dia do mês foi de R${major_invoice}.') #output: 900
-print(f'Número de dias no mês em que o valor de faturamento diário foi superior à média mensal: {days_above_average}.')#output: 8
+print(f'O menor valor de faturamento ocorrido em um dia do mês foi de R${minor_invoice:,.2f}.')
+print(f'O maior valor de faturamento ocorrido em um dia do mês foi de R${major_invoice:,.2f}.')
+print(f'Número de dias no mês em que o valor de faturamento diário foi superior à média mensal: {days_above_average}.')
