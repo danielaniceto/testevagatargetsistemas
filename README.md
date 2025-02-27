@@ -8,8 +8,13 @@ sequência de Fibonacci e retorne uma mensagem avisando se o número informado p
 
 IMPORTANTE: Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
 
-3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne: • O menor valor de faturamento ocorrido em um dia do mês; • O maior valor de faturamento ocorrido em
-um dia do mês; • Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
+
+• O menor valor de faturamento ocorrido em um dia do mês;
+
+• O maior valor de faturamento ocorrido em um dia do mês;
+
+• Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
 
 IMPORTANTE:
 
